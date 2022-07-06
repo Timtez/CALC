@@ -1,0 +1,194 @@
+:root {
+    --bodyColor: #3B4664; 
+    --bodyTxt: white;
+    --toggleBtn: #D13F30;
+    --switchBg: #181F32;
+    --calc-bg: #252D44;
+    --calc-screen: #181F32;
+    --calc-screenTxt: white;
+    --calc-headerTxt: white;
+    --calc-key: #EBE2DB;
+    --calc-keyTxt: #808080;
+    --calc-keyHover: white;
+    --eqBtnHover: #D13F30;
+    --specialKeysHover: #66B3BB ;
+    --btnShadow: rgb(43, 41, 41);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    /* background-color: rgba(201, 49, 74, 0.795); */
+}
+
+body {
+    background-color: var(--bodyColor);
+    color: var(--bodyTxt);
+    padding: 100px;
+    overflow: auto;
+}
+
+.toggle-text {
+    font-size: 10px;
+}
+
+.calc-container {
+    margin: 0 auto;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.calc {
+    padding: 17px 0;
+    width: 450px;
+    /* border: 1px solid red; */
+}
+
+.calc-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerTxt {
+    color: var(--calc-headerTxt);
+}
+
+.calc-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.calc-toggle-num {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* TOGGLE BTNS */
+.toggleBtn {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: var(--toggleBtn);
+    appearance: none;
+    opacity: 0;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--switchBg);
+    padding: 2px;
+}
+
+#one {
+    opacity: 1;    
+}
+
+.calc-display {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fff;
+    padding: 10px 20px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.calc-display-scr {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100px;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--calc-screen);
+    color: var(--calc-screenTxt);
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 1px; */
+    box-shadow: 0 3px 2px 1px var(--btnShadow) !important;
+}
+
+.calc-bg {
+    background-color: var(--calc-bg);
+    padding: 10px;
+}
+
+.calc-display, .calc-bg {
+    border-radius: 5px;
+}
+
+.calc-keys-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 12px;
+    padding: 5px;
+}
+
+.calc-key {
+    padding: 18px 5px;
+    text-align: center;
+    background-color: var(--calc-key) !important;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--calc-keyTxt);
+}
+
+.calc-key:hover {
+    background-color: var(--calc-keyHover) !important;
+    transition: 0.5s;
+}
+
+.reset {
+    grid-column: 1/3;
+    grid-row: 5/6;
+}
+
+.equal {
+    grid-column: 3/5;
+    grid-row: 5/6;
+}
+
+.equal:hover {
+    background-color: var(--eqBtnHover) !important;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.reset:hover, .delete:hover {
+    cursor: pointer;
+    background-color: var(--specialKeysHover) !important;
+    color: white;
+    transition: 0.5s;
+}
+
+@media screen and (min-width: 360px) and (max-width: 730px) {
+    .calc {
+        width: max-content;
+    }
+}
+
